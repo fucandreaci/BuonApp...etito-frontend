@@ -28,7 +28,6 @@ function App() {
   const {t} = useTranslation('commons');
 
   return (
-      <><Suspense fallback="loading">
         <div className="App">
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo"/>
@@ -78,8 +77,6 @@ function App() {
                   </span>
           </header>
         </div>
-          </Suspense>
-      </>
   );
 }
 
