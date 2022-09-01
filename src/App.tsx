@@ -7,7 +7,6 @@ import deTexts from 'i18n/common-translations/de.json';
 import nlTexts from 'i18n/common-translations/nl.json';
 import svTexts from 'i18n/common-translations/sv.json';
 import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
 import { loadTranslations} from 'i18n/i18n.service';
 
 
@@ -33,7 +32,6 @@ function App() {
         <div className="App">
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo"/>
-            <Counter/>
             <p>
               <>{t('common:BACK')}
                 <br/>
