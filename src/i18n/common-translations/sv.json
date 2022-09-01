@@ -1,0 +1,29 @@
+{
+  "HELLO": "Hej! Jag är",
+  "ASC": "Sortera stigande",
+  "DESC": "Sortera fallande",
+  "BACK": "Tillbaka",
+  "PURCHASE_STATUS": {
+    "ACTIVE": "Aktiva",
+    "ASSIGNED": "Tilldelade",
+    "DELETED": "Raderade",
+    "SUCCESSFUL": "Lyckades",
+    "EXPIRED": "Scaduto"
+  },
+  "POPUP_TITLE": {
+    "CARD_DETAILS": "Kortuppgifter",
+    "SELECT_WALLET": "Välj en finansieringskälla"
+  },
+  "REDEEM_CARD": {
+    "LOADING": "Vänligen vänta, vi aktiverar detta inköp",
+    "ACTIVATED": "Detta inköp har aktiverats",
+    "ERROR": "Detta inköp aktiverades inte. Vänligen försök igen"
+  },
+  "POPUP": {
+    "CLOSE_BTN": "Stäng"
+  },
+  "ERROR": "Hoppsan! Någonting gick fel",
+  "CONFIRM": "Bekräfta",
+  "CANCEL": "Avbryt",
+  "PURCHASE_ASSIGNEE": "Tilldelad person"
+}

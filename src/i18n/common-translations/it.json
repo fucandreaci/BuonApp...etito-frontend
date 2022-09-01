@@ -1,0 +1,23 @@
+{
+  "BACK": "Indietro",
+  "PURCHASE_STATUS": {
+    "ACTIVE": "Attiva",
+    "ASSIGNED": "Assegnata",
+    "DELETED": "Eliminata",
+    "SUCCESSFUL": "Completata",
+    "EXPIRED": "Scaduta"
+  },
+  "POPUP_TITLE": {
+    "CARD_DETAILS": "Dettagli della carta",
+    "SELECT_WALLET": "Seleziona una sorgente di fondi",
+    "INSUFFICIENT_BALANCE": "Attiva con fondi insufficienti"
+  },
+  "REDEEM_CARD": {
+    "LOADING": "Attendi, stiamo attivando questa spesa",
+    "ACTIVATED": "Questa spesa è ora attiva",
+    "ERROR": "Si è verificato un errore con l’attivazione di questa spesa. Riprova"
+  },
+  "CANCEL": "Annulla",
+  "CONFIRM": "Conferma",
+  "ERROR": "Ops! Qualcosa è andato storto"
+}

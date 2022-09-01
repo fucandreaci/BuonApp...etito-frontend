@@ -1,0 +1,23 @@
+{
+  "BACK": "Back",
+  "PURCHASE_STATUS": {
+    "ACTIVE": "Active",
+    "ASSIGNED": "Assigned",
+    "DELETED": "Deleted",
+    "SUCCESSFUL": "Completed",
+    "EXPIRED": "Expired"
+  },
+  "POPUP_TITLE": {
+    "CARD_DETAILS": "Card details",
+    "SELECT_WALLET": "Select a funding source",
+    "INSUFFICIENT_BALANCE": "Activate with insufficient funds"
+  },
+  "REDEEM_CARD": {
+    "LOADING": "Please wait, we’re activating this spend",
+    "ACTIVATED": "This spend is now active",
+    "ERROR": "We weren’t able to activate this spend. Please try again"
+  },
+  "CANCEL": "Cancel",
+  "CONFIRM": "Confirm",
+  "ERROR": "Ops! Something went wrong"
+}

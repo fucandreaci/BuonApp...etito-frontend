@@ -1,0 +1,29 @@
+{
+  "HELLO": "Hallo. Ik ben",
+  "ASC": "Oplopend sorteren",
+  "DESC": "Aflopend sorteren",
+  "BACK": "Terug",
+  "PURCHASE_STATUS": {
+    "ACTIVE": "Actief",
+    "ASSIGNED": "Toegewezen",
+    "DELETED": "Verwijderd",
+    "SUCCESSFUL": "Gelukt",
+    "EXPIRED": "Overig"
+  },
+  "POPUP_TITLE": {
+    "CARD_DETAILS": "Kaartgegevens",
+    "SELECT_WALLET": "Selecteer een financieringsbron"
+  },
+  "REDEEM_CARD": {
+    "LOADING": "Een ogenblik geduld, we activeren deze aankoop",
+    "ACTIVATED": "Deze aankoop is geactiveerd",
+    "ERROR": "Deze aankoop is niet geactiveerd. Probeer het opnieuw"
+  },
+  "POPUP": {
+    "CLOSE_BTN": "Sluiten"
+  },
+  "ERROR": "Oeps. Er ging iets mis",
+  "CONFIRM": "Bevestigen",
+  "CANCEL": "Annuleren",
+  "PURCHASE_ASSIGNEE": "Toegewezen persoon"
+}

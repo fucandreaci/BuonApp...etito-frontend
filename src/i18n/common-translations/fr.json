@@ -1,0 +1,29 @@
+{
+  "HELLO": "Bonjour, Je suis",
+  "ASC": "Trier par ordre croissant",
+  "DESC": "Trier par ordre décroissant",
+  "BACK": "Retour",
+  "PURCHASE_STATUS": {
+    "ACTIVE": "Activé",
+    "ASSIGNED": "Attribué",
+    "DELETED": "Supprimé",
+    "SUCCESSFUL": "Réussi",
+    "EXPIRED": "Scaduto"
+  },
+  "POPUP_TITLE": {
+    "CARD_DETAILS": "Informations de la carte",
+    "SELECT_WALLET": "Sélectionnez une source de financement"
+  },
+  "REDEEM_CARD": {
+    "LOADING": "Veuillez patienter, nous activons cet achat",
+    "ACTIVATED": "Cet achat a été activé avec succès",
+    "ERROR": "Cet achat n'a pas été activé. Veuillez réessayer"
+  },
+  "POPUP": {
+    "CLOSE_BTN": "Fermer"
+  },
+  "ERROR": "Désolé ! Une erreur s'est produite",
+  "CONFIRM": "Confirmer",
+  "CANCEL": "Annuler",
+  "PURCHASE_ASSIGNEE": "Ayant-droit"
+}
