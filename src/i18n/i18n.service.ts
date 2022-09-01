@@ -1,12 +1,12 @@
-import {i18Mfe} from './i18n.config';
+import {i18nConfig} from './i18n.config';
 
 const defaultLanguage = 'en';
 
 export type Languages = 'en' | 'it' | 'es' | 'fr' | 'nl' | 'sv' | 'de';
 
 const loadDefaultLanguage = (namespace: string, i18nTexts: any): void => {
-    if (!i18Mfe.hasResourceBundle(defaultLanguage, namespace)) {
-        i18Mfe.addResourceBundle(defaultLanguage, namespace, i18nTexts[defaultLanguage]);
+    if (!i18nConfig.hasResourceBundle(defaultLanguage, namespace)) {
+        i18nConfig.addResourceBundle(defaultLanguage, namespace, i18nTexts[defaultLanguage]);
     }
 };
 /**
@@ -16,8 +16,8 @@ const loadDefaultLanguage = (namespace: string, i18nTexts: any): void => {
  */
 export const loadTranslations = (namespace: string, i18nTexts: any): void => {
     loadDefaultLanguage(namespace, i18nTexts);
-    if (!i18Mfe.hasResourceBundle(getCurrentLanguage(), namespace)) {
-        i18Mfe.addResourceBundle(getCurrentLanguage(), namespace, i18nTexts[getCurrentLanguage()]);
+    if (!i18nConfig.hasResourceBundle(getCurrentLanguage(), namespace)) {
+        i18nConfig.addResourceBundle(getCurrentLanguage(), namespace, i18nTexts[getCurrentLanguage()]);
     }
 };
 /**
@@ -26,16 +26,16 @@ export const loadTranslations = (namespace: string, i18nTexts: any): void => {
  * @param i18nTexts
  */
 export const overwriteTranslations = (namespace: string, i18nTexts: any) => {
-    if (i18Mfe.hasResourceBundle(getCurrentLanguage(), namespace)) {
-        i18Mfe.addResourceBundle(getCurrentLanguage(), namespace, i18nTexts[getCurrentLanguage()], true, true);
+    if (i18nConfig.hasResourceBundle(getCurrentLanguage(), namespace)) {
+        i18nConfig.addResourceBundle(getCurrentLanguage(), namespace, i18nTexts[getCurrentLanguage()], true, true);
     } else {
-        i18Mfe.addResourceBundle(getCurrentLanguage(), namespace, i18nTexts[getCurrentLanguage()]);
+        i18nConfig.addResourceBundle(getCurrentLanguage(), namespace, i18nTexts[getCurrentLanguage()]);
     }
 };
 
 export const getCurrentLanguage = (): Languages => {
-    if (i18Mfe.languages && i18Mfe.languages.length) {
-        return i18Mfe.languages[0] as Languages;
+    if (i18nConfig.languages && i18nConfig.languages.length) {
+        return i18nConfig.languages[0] as Languages;
     }
     return defaultLanguage;
 };

@@ -10,7 +10,7 @@ import svCommon from './common-translations/sv.json';
 /**
  * initializer of the translate module
  */
-export const i18Mfe = i18next.createInstance({
+export const i18nConfig = i18next.createInstance({
     lng: 'en',
     fallbackLng: 'en',
     resources: {},
@@ -36,16 +36,16 @@ export const i18Mfe = i18next.createInstance({
 });
 
 export const initAppTranslator = () => {
-    i18Mfe.init();
-    i18Mfe.addResourceBundle('en', 'common', enCommon);
-    i18Mfe.addResourceBundle('it', 'common', itCommon);
-    i18Mfe.addResourceBundle('de', 'common', deCommon);
-    i18Mfe.addResourceBundle('es', 'common', esCommon);
-    i18Mfe.addResourceBundle('fr', 'common', frCommon);
-    i18Mfe.addResourceBundle('nl', 'common', nlCommon);
-    i18Mfe.addResourceBundle('sv', 'common', svCommon);
+    i18nConfig.init();
+    i18nConfig.addResourceBundle('en', 'common', enCommon);
+    i18nConfig.addResourceBundle('it', 'common', itCommon);
+    i18nConfig.addResourceBundle('de', 'common', deCommon);
+    i18nConfig.addResourceBundle('es', 'common', esCommon);
+    i18nConfig.addResourceBundle('fr', 'common', frCommon);
+    i18nConfig.addResourceBundle('nl', 'common', nlCommon);
+    i18nConfig.addResourceBundle('sv', 'common', svCommon);
 
 };
 export const setUserSelectedLanguage = (language: string) => {
-    i18Mfe.changeLanguage(language);
+    i18nConfig.changeLanguage(language);
 };
