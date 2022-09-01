@@ -16,7 +16,7 @@ initAppTranslator();
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <I18nextProvider i18n={ i18Mfe }><App /></I18nextProvider>,
+      <I18nextProvider i18n={ i18Mfe }><App /></I18nextProvider>
 
       </Provider>
   </React.StrictMode>

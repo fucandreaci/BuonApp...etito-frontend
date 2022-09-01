@@ -8,11 +8,10 @@ import nlTexts from 'i18n/common-translations/nl.json';
 import svTexts from 'i18n/common-translations/sv.json';
 import {Route, Router, Switch} from 'react-router-dom';
 import {loadTranslations} from 'i18n/i18n.service';
-import { createBrowserHistory } from "history";
-
-
+import {createBrowserHistory} from "history";
 import './App.css';
 import {useTranslation} from 'react-i18next';
+import {Login} from './screens/Login/login.component';
 
 function App() {
     const i18nTexts = {
@@ -30,13 +29,13 @@ function App() {
     const customHistory = createBrowserHistory();
 
     return (
-        <Switch>
-            <Router history={customHistory}>
+        <Router history={customHistory}>
+            <Switch>
                 <Route path="/login" exact={true}>
-                    HOME
+                    <Login/>
                 </Route>
-            </Router>
-        </Switch>
+            </Switch>
+        </Router>
     );
 }
 
