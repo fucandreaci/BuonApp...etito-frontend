@@ -2,10 +2,12 @@ import {combineReducers} from 'redux';
 import {languageReducer} from './language/language.reducer';
 import {AppAction} from './types';
 import {authenticationReducer} from './authentication/authentication.reducer';
+import {toastReducer} from './toast/toast.reducer';
 
 const appReducer = combineReducers({
     ...languageReducer,
-    ...authenticationReducer
+    ...authenticationReducer,
+    ...toastReducer
 });
 
 export const RESET_STORE = 'RESET_STORE';

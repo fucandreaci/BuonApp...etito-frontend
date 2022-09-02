@@ -1,0 +1,10 @@
+{
+  "error": {
+    "Generic": {
+      "INVALID_PARAMETERS": "Parameters are invalid."
+    },
+    "User": {
+      "INVALID_CREDENTIALS": "The credentials are invalid."
+    }
+  }
+}
