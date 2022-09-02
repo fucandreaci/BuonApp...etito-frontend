@@ -14,6 +14,8 @@ import {useTranslation} from 'react-i18next';
 import {Login} from 'screens/login/login.component';
 import { Grommet } from 'grommet';
 import {Toastr} from './shared/toastr/toastr.component';
+import {Home} from 'grommet-icons';
+import {HomeComponent} from './screens/homeComponent/homeComponent.component';
 
 function App() {
     const i18nTexts = {
@@ -47,6 +49,9 @@ function App() {
                 <Switch>
                     <Route path="/login" exact={true}>
                         <Login/>
+                    </Route>
+                    <Route path="/home" exact={true}>
+                        <HomeComponent/>
                     </Route>
                 </Switch>
             </Router>
