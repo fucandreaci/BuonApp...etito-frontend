@@ -5,5 +5,5 @@ export interface AuthenticationState {
     role: Role
     userId: number,
     isLoading: boolean,
-    error: string
+    isLogged: boolean
 }

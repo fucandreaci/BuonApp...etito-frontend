@@ -18,3 +18,16 @@ export interface ResponseLoginDTO {
     role: Role
     userId: number
 }
+
+export interface RequestSignupDTO {
+    email: string,
+    password: string,
+    name: string,
+    surname: string,
+}
+
+export interface ResponseSignupDTO {
+    email: string,
+    name: string,
+    surname: string,
+}

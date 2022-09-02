@@ -8,39 +8,40 @@ const initialState: AuthenticationState = {
     role: Role.USER,
     userId: 0,
     isLoading: false,
-    error: ''
+    isLogged: false
 };
 
-export const authenticationReducer = createReducer(initialState, (builder) => {
+export const authenticationReducer = {
+    authentication: createReducer(initialState, (builder) => {
+        builder.addCase(authenticationAction.signInAction.pending, (state, action) => {
+            return {
+                ...state,
+                isLoading: true,
+                isLogged: false
+            }
+        });
 
-    builder.addCase(authenticationAction.signInAction.pending, (state, action) => {
-        return {
-            ...state,
-            isLoading: true,
-            error: ''
-        }
-    });
+        builder.addCase(authenticationAction.signInAction.fulfilled, (state, action) => {
+            return {
+                ...state,
+                token: action.payload.token,
+                role: action.payload.role,
+                userId: action.payload.userId,
+                isLoading: false,
+                isLogged: true
+            }
+        });
 
-    builder.addCase(authenticationAction.signInAction.fulfilled, (state, action) => {
-        return {
-            ...state,
-            token: action.payload.token,
-            role: action.payload.role,
-            userId: action.payload.userId,
-            isLoading: false,
-            error: ''
-        }
-    });
+        builder.addCase(authenticationAction.signInAction.rejected, (state, action) => {
+            return {
+                ...state,
+                isLoading: false,
+                isLogged: false
+            }
+        });
 
-    builder.addCase(authenticationAction.signInAction.rejected, (state, action) => {
-        return {
-            ...state,
-            isLoading: false,
-            error: action.error.message || 'Error'
-        }
-    });
-
-    builder.addDefaultCase((state, action) => {
-        return state;
-    });
-});
+        builder.addDefaultCase((state, action) => {
+            return state;
+        });
+    })
+}

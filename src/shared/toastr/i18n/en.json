@@ -4,7 +4,8 @@
       "INVALID_PARAMETERS": "Parameters are invalid."
     },
     "User": {
-      "INVALID_CREDENTIALS": "The credentials are invalid."
+      "INVALID_CREDENTIALS": "The credentials are invalid.",
+      "USER_ALREADY_EXISTS": "The user already exists."
     }
   }
 }

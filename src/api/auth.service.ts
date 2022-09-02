@@ -6,7 +6,7 @@
  * Copyright © 2022-2022 Andrea Fucci
  */
 
-import {RequestLoginDTO, ResponseLoginDTO} from 'models/authentication';
+import {RequestLoginDTO, RequestSignupDTO, ResponseLoginDTO, ResponseSignupDTO} from 'models/authentication';
 import axios, {AxiosResponse} from 'axios';
 
 const rest = 'auth';
@@ -15,6 +15,11 @@ const login = (loginDTO: RequestLoginDTO): Promise<AxiosResponse<ResponseLoginDT
     return axios.post<ResponseLoginDTO>(rest + '/login', loginDTO);
 }
 
+const signup = (signupDTO: RequestSignupDTO): Promise<AxiosResponse<ResponseSignupDTO>> => {
+    return axios.post<ResponseSignupDTO>(rest + '/signup', signupDTO);
+}
+
 export const authService = {
-    login
+    login,
+    signup
 }
