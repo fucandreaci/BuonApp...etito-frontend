@@ -39,7 +39,9 @@ export const Login = (props: LoginProps) => {
                     <form>
                         <label htmlFor="chk" aria-hidden="true" className={`${componentClassName}__label`}>Sign
                             up</label>
-                        <input type="text" name="txt" placeholder="User name"
+                        <input type="text" name="txt" placeholder="Nome"
+                               className={`${componentClassName}__input`}/>
+                        <input type="text" name="txt" placeholder="Cognome"
                                className={`${componentClassName}__input`}/>
                         <input type="email" name="email" placeholder="Email"
                                className={`${componentClassName}__input`}/>
