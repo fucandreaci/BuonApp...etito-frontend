@@ -11,7 +11,8 @@ import {loadTranslations} from 'i18n/i18n.service';
 import {createBrowserHistory} from "history";
 import './App.css';
 import {useTranslation} from 'react-i18next';
-import {Login} from './screens/Login/login.component';
+import {Login} from 'screens/Login/login.component';
+import { Grommet } from 'grommet';
 
 function App() {
     const i18nTexts = {
@@ -26,16 +27,28 @@ function App() {
     loadTranslations('commons', i18nTexts);
 
     const {t} = useTranslation('commons');
-    const customHistory = createBrowserHistory();
+    const browserHistory = createBrowserHistory();
+
+    const theme = {
+        global: {
+            colors: {
+                primary: '#3e4684',
+                primary_light: '#dde5f4',
+                primary_light_2: '#f1f7fe',
+            }
+        }
+    }
 
     return (
-        <Router history={customHistory}>
-            <Switch>
-                <Route path="/login" exact={true}>
-                    <Login/>
-                </Route>
-            </Switch>
-        </Router>
+        <Grommet theme={theme}>
+            <Router history={browserHistory}>
+                <Switch>
+                    <Route path="/login" exact={true}>
+                        <Login/>
+                    </Route>
+                </Switch>
+            </Router>
+        </Grommet>
     );
 }
 

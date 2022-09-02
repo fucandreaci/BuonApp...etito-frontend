@@ -8,9 +8,11 @@ import esTexts from './i18n/es.json';
 import frTexts from './i18n/fr.json';
 import nlTexts from './i18n/nl.json';
 import svTexts from './i18n/sv.json';
-import './login.css'
+import './login.scss'
+import {Avatar} from 'grommet';
+import {Google} from 'grommet-icons';
 
-interface LoginProps{
+interface LoginProps {
 
 }
 
@@ -31,7 +33,38 @@ export const Login = (props: LoginProps) => {
 
     return (
         <div className={`${componentClassName}`}>
-            This is login component
+            <div className={`${componentClassName}__container`}>
+                <input type="checkbox" id="chk" aria-hidden="true"/>
+                <div className={`${componentClassName}__signup`}>
+                    <form>
+                        <label htmlFor="chk" aria-hidden="true" className={`${componentClassName}__label`}>Sign
+                            up</label>
+                        <input type="text" name="txt" placeholder="User name"
+                               className={`${componentClassName}__input`}/>
+                        <input type="email" name="email" placeholder="Email"
+                               className={`${componentClassName}__input`}/>
+                        <input type="password" name="pswd" placeholder="Password"
+                               className={`${componentClassName}__input`}/>
+                        <button className={`${componentClassName}__button`}>Sign up</button>
+                    </form>
+                </div>
+
+                <div className={`${componentClassName}__login`}>
+                    <form>
+                        <label htmlFor="chk" aria-hidden="true" className={`${componentClassName}__label`}>Login</label>
+                        <input type="email" name="email" placeholder="Email" className={`${componentClassName}__input`}/>
+                        <input type="password" name="pswd" placeholder="Password"
+                               className={`${componentClassName}__input`}/>
+                        <button className={`${componentClassName}__button`}>Login</button>
+                        <button className={`${componentClassName}__button_outline`}>
+                            <Avatar background={"white"} size={'small'}>
+                                <Google />
+                            </Avatar>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
         </div>
     )
 };
