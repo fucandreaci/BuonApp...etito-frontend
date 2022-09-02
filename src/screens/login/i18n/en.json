@@ -1,0 +1,15 @@
+{
+  "NAME": "Name",
+  "SURNAME": "Surname",
+  "EMAIL": "Email",
+  "PASSWORD": "Password",
+  "SIGNUP_BUTTON": "Sign up",
+  "SIGNUP_LABEL": "Sign up",
+  "SIGNIN_LABEL": "Sign in",
+  "SIGNIN_BUTTON": "Sign in",
+  "LOGIN_SUCCESS": "Login success, redirecting...",
+  "SIGNUP_SUCCESS": "Signup success, confirm your email",
+  "ERROR": {
+    "FILL_ALL_FIELDS": "Please fill all fields"
+  }
+}

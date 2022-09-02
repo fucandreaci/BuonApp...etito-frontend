@@ -8,15 +8,18 @@ import esTexts from './i18n/es.json';
 import frTexts from './i18n/fr.json';
 import nlTexts from './i18n/nl.json';
 import svTexts from './i18n/sv.json';
-import './login.css'
+import './customButton.scss'
 
-interface LoginProps{
-
+interface CustomButtonProps{
+    textKey: string,
+    outline?: boolean,
+    onClick: () => void,
+    children?: JSX.Element,
 }
 
-const componentClassName = 'login';
+const componentClassName = 'custom-button';
 
-export const Login = (props: LoginProps) => {
+export const CustomButton = (props: CustomButtonProps) => {
     const i18nTexts = {
         'en': enTexts,
         'it': itTexts,
@@ -26,12 +29,16 @@ export const Login = (props: LoginProps) => {
         'nl': nlTexts,
         'sv': svTexts,
     };
-    loadTranslations('Login', i18nTexts);
-    const {t} = useTranslation('Login');
+    loadTranslations('customButton', i18nTexts);
+    const {t} = useTranslation('customButton');
 
     return (
         <div className={`${componentClassName}`}>
-            This is login component
+            <button className={`${componentClassName}__button` + (props.outline ? '_outline' : '')} onClick={props.onClick}>
+                {
+                    props.outline ? props.children : t(props.textKey)
+                }
+            </button>
         </div>
     )
 };
