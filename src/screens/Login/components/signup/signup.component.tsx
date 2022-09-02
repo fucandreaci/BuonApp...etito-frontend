@@ -8,9 +8,9 @@ import esTexts from './i18n/es.json';
 import frTexts from './i18n/fr.json';
 import nlTexts from './i18n/nl.json';
 import svTexts from './i18n/sv.json';
-import './signup.scss'
 import {CustomInput} from 'shared/customInput/customInput.component';
 import {CustomButton} from 'shared/customButton/customButton.component';
+import './signup.scss'
 
 interface SignupProps{
     name: string
