@@ -7,11 +7,17 @@ import './index.css';
 import {i18Mfe, initAppTranslator} from './i18n/i18n.config';
 import {I18nextProvider} from 'react-i18next';
 import store from './store/store.config';
+import axios from 'axios';
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
 
 initAppTranslator();
+
+axios.defaults.baseURL = 'http://localhost:8080/';
+axios.defaults.headers.common['Authorization'] = 'AUTH TOKEN';
+axios.defaults.headers.post['Content-Type'] = 'application/json';
+
 
 root.render(
   <React.StrictMode>

@@ -34,7 +34,7 @@ export const CustomButton = (props: CustomButtonProps) => {
 
     return (
         <div className={`${componentClassName}`}>
-            <button className={`${componentClassName}__button` + (props.outline ? '_outline' : '')}>
+            <button className={`${componentClassName}__button` + (props.outline ? '_outline' : '')} onClick={props.onClick}>
                 {
                     props.outline ? props.children : t(props.textKey)
                 }

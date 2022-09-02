@@ -11,6 +11,10 @@ import svTexts from './i18n/sv.json';
 import {Signin} from './components/signin/signin.component';
 import {Signup} from './components/signup/signup.component';
 import './login.scss'
+import {RequestLoginDTO} from '../../models/authentication';
+import {useDispatch} from 'react-redux';
+import {authenticationAction} from '../../store/authentication/authentication.action';
+import {useAppDispatch} from '../../store/store.config';
 
 interface LoginProps {
 }
@@ -30,6 +34,8 @@ export const Login = (props: LoginProps) => {
     loadTranslations('login', i18nTexts);
     const {t} = useTranslation('login');
 
+    const dispatch = useAppDispatch();
+
     const [name, setName] = useState<string>('');
     const [surname, setSurname] = useState<string>('');
     const [emailSignup, setEmailSignup] = useState<string>('');
@@ -39,6 +45,16 @@ export const Login = (props: LoginProps) => {
     const [passwordLogin, setPasswordLogin] = useState<string>('');
 
     const [isShowSignup, setIsShowSignup] = useState<boolean>(false);
+
+    const login = async () => {
+        console.log('Click')
+        const request: RequestLoginDTO = {
+            email: emailLogin,
+            password: passwordLogin
+        }
+
+        await dispatch(authenticationAction.signInAction(request))
+    }
 
     return (
         <div className={`${componentClassName}`}>
@@ -64,7 +80,7 @@ export const Login = (props: LoginProps) => {
                         setEmailLogin={setEmailLogin}
                         passwordLogin={passwordLogin}
                         setPasswordLogin={setPasswordLogin}
-                        onClickSigin={() => {}}
+                        onClickSigin={login}
                         onGoogleLogin={() => {}}
                     />
 
