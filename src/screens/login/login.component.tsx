@@ -8,10 +8,9 @@ import esTexts from './i18n/es.json';
 import frTexts from './i18n/fr.json';
 import nlTexts from './i18n/nl.json';
 import svTexts from './i18n/sv.json';
-import './login.scss'
-import {CustomInput} from 'shared/customInput/customInput.component';
-import {CustomButton} from '../../shared/customButton/customButton.component';
 import {Signin} from './components/signin/signin.component';
+import './login.scss'
+import {Signup} from './components/signup/signup.component';
 
 interface LoginProps {
 }
@@ -44,18 +43,20 @@ export const Login = (props: LoginProps) => {
     return (
         <div className={`${componentClassName}`}>
             <div className={`${componentClassName}__container`}>
-                <input type="checkbox" id="chk" aria-hidden="true"/>
-                <div className={`${componentClassName}__signup`}>
-                    <label htmlFor="chk" aria-hidden="true" className={`${componentClassName}__label`}>{ t('login:SIGNUP_LABEL') }</label>
-                    <CustomInput inputType={'text'} placeholderKey={'login:NAME'} value={name} onChange={setName} />
-                    <CustomInput inputType={'text'} placeholderKey={'login:SURNAME'} value={surname} onChange={setSurname} />
-                    <CustomInput inputType={'email'} placeholderKey={'login:EMAIL'} value={emailSignup} onChange={setEmailSignup} />
-                    <CustomInput inputType={'password'} placeholderKey={'login:PASSWORD'} value={passwordSignup} onChange={setPasswordSignup} />
+                    <Signup
+                        isShow={isShowSignup}
+                        switchToSignin={() => setIsShowSignup(!isShowSignup)}
+                        name={name}
+                        setName={setName}
+                        surname={surname}
+                        setSurname={setSurname}
+                        emailSignup={emailSignup}
+                        setEmailSignup={setEmailSignup}
+                        passwordSignup={passwordSignup}
+                        setPasswordSignup={setPasswordSignup}
+                        onClickSignup={() => {}}
+                    />
 
-                    <CustomButton textKey={'login:SIGNUP_BUTTON'} onClick={() => {}} />
-                </div>
-
-                <div className={`${componentClassName}__login`}>
                     <Signin
                         isShow={!isShowSignup}
                         switchToSignup={() => setIsShowSignup(!isShowSignup)}
@@ -66,7 +67,6 @@ export const Login = (props: LoginProps) => {
                         onClickSigin={() => {}}
                         onGoogleLogin={() => {}}
                     />
-                </div>
 
             </div>
         </div>

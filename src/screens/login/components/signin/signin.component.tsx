@@ -43,7 +43,6 @@ export const Signin = (props: SigninProps) => {
     return (
         <div className={`${componentClassName} ` + (props.isShow ? `${componentClassName}__showing` : '')}>
             <label
-                htmlFor="chk"
                 aria-hidden="true"
                 className={`${componentClassName}__label ` + (props.isShow ? `${componentClassName}__showing_label` : '')}
                 onClick={props.switchToSignup}

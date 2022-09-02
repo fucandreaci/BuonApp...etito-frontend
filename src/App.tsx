@@ -11,7 +11,7 @@ import {loadTranslations} from 'i18n/i18n.service';
 import {createBrowserHistory} from "history";
 import './App.css';
 import {useTranslation} from 'react-i18next';
-import {Login} from 'screens/Login/login.component';
+import {Login} from 'screens/login/login.component';
 import { Grommet } from 'grommet';
 
 function App() {
