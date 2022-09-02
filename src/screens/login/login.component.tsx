@@ -18,6 +18,7 @@ import {useAppDispatch} from 'store/store.config';
 import {authenticationSelector} from 'store/authentication/authentication.selector';
 import {toastActions} from 'store/toast/toast.action';
 import {ToastType} from 'store/toast/types';
+import axios from 'axios';
 
 interface LoginProps {
 }
@@ -131,6 +132,7 @@ export const Login = (props: LoginProps) => {
                     setPasswordLogin={setPasswordLogin}
                     onClickSigin={login}
                     onGoogleLogin={() => {
+                        window.location.href = axios.defaults.baseURL + 'oauth2/authorization/google'
                     }}
                 />
 
