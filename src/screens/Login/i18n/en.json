@@ -1,1 +1,6 @@
-{}
+{
+  "NAME": "Name",
+  "SURNAME": "Surname",
+  "EMAIL": "Email",
+  "PASSWORD": "Password"
+}

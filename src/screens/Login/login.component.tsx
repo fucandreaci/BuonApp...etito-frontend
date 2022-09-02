@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {loadTranslations} from 'i18n/i18n.service';
 import {useTranslation} from 'react-i18next';
 import enTexts from './i18n/en.json';
@@ -11,6 +11,7 @@ import svTexts from './i18n/sv.json';
 import './login.scss'
 import {Avatar} from 'grommet';
 import {Google} from 'grommet-icons';
+import {CustomInput} from 'shared/customInput/customInput.component';
 
 interface LoginProps {
 
@@ -28,8 +29,13 @@ export const Login = (props: LoginProps) => {
         'nl': nlTexts,
         'sv': svTexts,
     };
-    loadTranslations('Login', i18nTexts);
-    const {t} = useTranslation('Login');
+    loadTranslations('login', i18nTexts);
+    const {t} = useTranslation('login');
+
+    const [name, setName] = useState<string>('');
+    const [surname, setSurname] = useState<string>('');
+    const [emailSignup, setEmailSignup] = useState<string>('');
+    const [passwordSignup, setPasswordSignup] = useState<string>('');
 
     return (
         <div className={`${componentClassName}`}>
@@ -39,14 +45,11 @@ export const Login = (props: LoginProps) => {
                     <form>
                         <label htmlFor="chk" aria-hidden="true" className={`${componentClassName}__label`}>Sign
                             up</label>
-                        <input type="text" name="txt" placeholder="Nome"
-                               className={`${componentClassName}__input`}/>
-                        <input type="text" name="txt" placeholder="Cognome"
-                               className={`${componentClassName}__input`}/>
-                        <input type="email" name="email" placeholder="Email"
-                               className={`${componentClassName}__input`}/>
-                        <input type="password" name="pswd" placeholder="Password"
-                               className={`${componentClassName}__input`}/>
+                        <CustomInput inputType={'text'} placeholderKey={'login:NAME'} value={name} onChange={setName} />
+                        <CustomInput inputType={'text'} placeholderKey={'login:SURNAME'} value={surname} onChange={setSurname} />
+                        <CustomInput inputType={'email'} placeholderKey={'login:EMAIL'} value={emailSignup} onChange={setEmailSignup} />
+                        <CustomInput inputType={'password'} placeholderKey={'login:PASSWORD'} value={passwordSignup} onChange={setPasswordSignup} />
+
                         <button className={`${componentClassName}__button`}>Sign up</button>
                     </form>
                 </div>
