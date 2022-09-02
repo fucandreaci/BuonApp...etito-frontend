@@ -8,18 +8,18 @@ import esTexts from './i18n/es.json';
 import frTexts from './i18n/fr.json';
 import nlTexts from './i18n/nl.json';
 import svTexts from './i18n/sv.json';
-import './customInput.scss'
+import './customButton.scss'
 
-interface CustomInputProps{
-    inputType: string;
-    placeholderKey: string;
-    value: string;
-    onChange: (value: string) => void;
+interface CustomButtonProps{
+    textKey: string,
+    outline?: boolean,
+    onClick: () => void,
+    children?: JSX.Element,
 }
 
-const componentClassName = 'custom-input';
+const componentClassName = 'custom-button';
 
-export const CustomInput = (props: CustomInputProps) => {
+export const CustomButton = (props: CustomButtonProps) => {
     const i18nTexts = {
         'en': enTexts,
         'it': itTexts,
@@ -29,18 +29,16 @@ export const CustomInput = (props: CustomInputProps) => {
         'nl': nlTexts,
         'sv': svTexts,
     };
-    loadTranslations('customInput', i18nTexts);
-    const {t} = useTranslation('customInput');
+    loadTranslations('customButton', i18nTexts);
+    const {t} = useTranslation('customButton');
 
     return (
         <div className={`${componentClassName}`}>
-            <input
-                type={props.inputType}
-                placeholder={t(props.placeholderKey)}
-                value={props.value}
-                onChange={(e) => props.onChange(e.target.value)}
-                className={`${componentClassName}__input`}
-            />
+            <button className={`${componentClassName}__button` + (props.outline ? '_outline' : '')}>
+                {
+                    props.outline ? props.children : t(props.textKey)
+                }
+            </button>
         </div>
     )
 };
