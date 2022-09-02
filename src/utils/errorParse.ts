@@ -7,7 +7,7 @@
  */
 
 import {AxiosError} from 'axios';
-import {ExceptionManager} from '../models/exceptionManager';
+import {ExceptionManager} from 'models/exceptionManager';
 
 const getException = (err: AxiosError): ExceptionManager => {
     return err.response?.data as ExceptionManager;

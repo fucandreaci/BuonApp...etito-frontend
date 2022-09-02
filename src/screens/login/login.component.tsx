@@ -11,13 +11,13 @@ import svTexts from './i18n/sv.json';
 import {Signin} from './components/signin/signin.component';
 import {Signup} from './components/signup/signup.component';
 import './login.scss'
-import {RequestLoginDTO, RequestSignupDTO} from '../../models/authentication';
+import {RequestLoginDTO, RequestSignupDTO} from 'models/authentication';
 import {useSelector} from 'react-redux';
-import {authenticationAction} from '../../store/authentication/authentication.action';
-import {useAppDispatch} from '../../store/store.config';
-import {authenticationSelector} from '../../store/authentication/authentication.selector';
-import {toastActions} from '../../store/toast/toast.action';
-import {ToastType} from '../../store/toast/types';
+import {authenticationAction} from 'store/authentication/authentication.action';
+import {useAppDispatch} from 'store/store.config';
+import {authenticationSelector} from 'store/authentication/authentication.selector';
+import {toastActions} from 'store/toast/toast.action';
+import {ToastType} from 'store/toast/types';
 
 interface LoginProps {
 }
