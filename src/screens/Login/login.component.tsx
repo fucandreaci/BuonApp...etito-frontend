@@ -9,13 +9,11 @@ import frTexts from './i18n/fr.json';
 import nlTexts from './i18n/nl.json';
 import svTexts from './i18n/sv.json';
 import './login.scss'
-import {Avatar} from 'grommet';
-import {Google} from 'grommet-icons';
 import {CustomInput} from 'shared/customInput/customInput.component';
 import {CustomButton} from '../../shared/customButton/customButton.component';
+import {Signin} from './components/signin/signin.component';
 
 interface LoginProps {
-
 }
 
 const componentClassName = 'login';
@@ -41,6 +39,8 @@ export const Login = (props: LoginProps) => {
     const [emailLogin, setEmailLogin] = useState<string>('');
     const [passwordLogin, setPasswordLogin] = useState<string>('');
 
+    const [isShowSignup, setIsShowSignup] = useState<boolean>(false);
+
     return (
         <div className={`${componentClassName}`}>
             <div className={`${componentClassName}__container`}>
@@ -56,16 +56,16 @@ export const Login = (props: LoginProps) => {
                 </div>
 
                 <div className={`${componentClassName}__login`}>
-                    <label htmlFor="chk" aria-hidden="true" className={`${componentClassName}__label`}>Login</label>
-                    <CustomInput inputType={'email'} placeholderKey={'login:EMAIL'} value={emailLogin} onChange={setEmailLogin} />
-                    <CustomInput inputType={'password'} placeholderKey={'login:PASSWORD'} value={passwordLogin} onChange={setPasswordLogin} />
-
-                    <CustomButton textKey={'login:SIGNIN_BUTTON'} onClick={() => {}} />
-                    <CustomButton textKey={''} outline={true} onClick={() => {}}>
-                        <Avatar background={"white"} size={'small'}>
-                            <Google />
-                        </Avatar>
-                    </CustomButton>
+                    <Signin
+                        isShow={!isShowSignup}
+                        switchToSignup={() => setIsShowSignup(!isShowSignup)}
+                        emailLogin={emailLogin}
+                        setEmailLogin={setEmailLogin}
+                        passwordLogin={passwordLogin}
+                        setPasswordLogin={setPasswordLogin}
+                        onClickSigin={() => {}}
+                        onGoogleLogin={() => {}}
+                    />
                 </div>
 
             </div>

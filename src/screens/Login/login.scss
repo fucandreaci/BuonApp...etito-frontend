@@ -38,24 +38,6 @@
     transition: .5s ease-in-out;
   }
 
-  &__login{
-    height: 460px;
-    background: #eee;
-    border-radius: 60% / 10%;
-    transform: translateY(-180px);
-    transition: .8s ease-in-out;
-  }
-  &__login label{
-    color: #8a3b3b;
-    transform: scale(.6);
-    padding-top: 20px;
-  }
-  #chk:checked ~ .login__login{
-    transform: translateY(-500px);
-  }
-  #chk:checked ~ .login__login label{
-    transform: scale(1);
-  }
   #chk:checked ~ .login__signup label{
     transform: scale(.6);
   }
