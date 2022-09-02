@@ -9,8 +9,8 @@ import frTexts from './i18n/fr.json';
 import nlTexts from './i18n/nl.json';
 import svTexts from './i18n/sv.json';
 import {Signin} from './components/signin/signin.component';
-import './login.scss'
 import {Signup} from './components/signup/signup.component';
+import './login.scss'
 
 interface LoginProps {
 }

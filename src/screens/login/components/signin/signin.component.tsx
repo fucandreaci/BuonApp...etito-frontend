@@ -8,11 +8,11 @@ import esTexts from './i18n/es.json';
 import frTexts from './i18n/fr.json';
 import nlTexts from './i18n/nl.json';
 import svTexts from './i18n/sv.json';
-import './signin.scss'
-import {CustomInput} from '../../../../shared/customInput/customInput.component';
-import {CustomButton} from '../../../../shared/customButton/customButton.component';
+import {CustomInput} from 'shared/customInput/customInput.component';
+import {CustomButton} from 'shared/customButton/customButton.component';
 import {Avatar} from 'grommet';
 import {Google} from 'grommet-icons';
+import './signin.scss'
 
 interface SigninProps{
     emailLogin: string
