@@ -35,9 +35,7 @@ function App() {
     const theme = {
         global: {
             colors: {
-                primary: '#3e4684',
-                primary_light: '#dde5f4',
-                primary_light_2: '#f1f7fe',
+                primary: '#8a3b3b',
             }
         }
     }

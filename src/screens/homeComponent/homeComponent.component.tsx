@@ -8,8 +8,10 @@ import esTexts from './i18n/es.json';
 import frTexts from './i18n/fr.json';
 import nlTexts from './i18n/nl.json';
 import svTexts from './i18n/sv.json';
-import './homeComponent.scss'
 import {ListRecipes} from './components/listRecipes/listRecipes.component';
+import {Button, Header, Heading, Menu} from 'grommet';
+import {Logout} from 'grommet-icons';
+import './homeComponent.scss'
 
 interface HomeComponentProps{
 
@@ -32,6 +34,10 @@ export const HomeComponent = (props: HomeComponentProps) => {
 
     return (
         <div className={`${componentClassName}`}>
+            <Header background="primary" pad={{horizontal: 'small'}}>
+                <Heading margin="none" style={{fontSize: '25px'}}>Buon app...etito</Heading>
+                <Button icon={<Logout />} hoverIndicator />
+            </Header>
             <ListRecipes />
         </div>
     )
