@@ -34,24 +34,21 @@ export const RecipeItem = (props: RecipeItemProps) => {
 
     return (
         <div className={`${componentClassName}`}>
-            <Card height="medium" width="medium" background="light-1">
-                <CardBody pad="none">
-                    <Image
-                        fit="cover"
-                        src="//v2.grommet.io/assets/Wilderpeople_Ricky.jpg"
-                    />
-                </CardBody>
-                <CardFooter pad={"small"} background="light-2" style={{'justifyContent': 'flex-start'}}>
-                    <div className={`${componentClassName}__types`}>
-                        <div className={`${componentClassName}__padding_all`}>
-                            <CustomBadge value="Secondo" />
-                        </div>
+            <div className={`${componentClassName}__profile_card`}>
+                <div className={`${componentClassName}__profile_card__img-box`}>
+                    <img className={`${componentClassName}__profile_card__img`} src={'https://images.pexels.com/photos/5186/person-woman-coffee-cup.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'} />
+                </div>
+
+                <div className={`${componentClassName}__profile_card__content`}>
+                    <h2 className={`${componentClassName}__profile_card__title`}>John Doe</h2>
+                    <div className={`${componentClassName}__profile_card__type`}>
+                        <CustomBadge value={'Test'} />
+                        <CustomBadge value={'Test'} />
+                        <CustomBadge value={'Test'} />
                     </div>
-                        <div className={`${componentClassName}__title`}>
-                            <Text  margin={"auto"}>Pennette alla vodka</Text>
-                        </div>
-                </CardFooter>
-            </Card>
+                    <p className={`${componentClassName}__profile_card__school`}>Lorem ipsum</p>
+                </div>
+            </div>
         </div>
     )
 };

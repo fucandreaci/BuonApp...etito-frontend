@@ -1,5 +1,85 @@
 .recipe-item{
-  &__padding_all{
-    padding: 3px;
+  display: grid;
+
+  &__profile_card {
+    /* basic color palette */
+    --twine-1:  hsl(35, 52%, 60%);
+    --twine-2:  hsl(35, 42%, 95%);
+    --twine-3:  hsl(35, 100%, 85%);
+
+    /* fonts */
+    --ft-fy-fallback-1: sans-serif;
+    --ft-se-300:        0.9rem;
+    --ft-se-500:        1.2em;
+    --ft-se-600:        2rem;
+
+    /* spaces */
+    --space-400: 2em;
+
+    margin: {
+      block: var(--space-400);
+    };
+
+    --__content_gap: 1.2em;
+
+    --__title_cr:    var(--twine-2);
+    --__title_ft-se: var(--ft-se-600);
+    --__title_mn-bk: 0.5em 0.2em;
+
+    --__school_cr:    var(--twine-2);
+    --__school_ft-se: var(--ft-se-300);
+
+    overflow: hidden;
+    border-radius: 25px;
+
+    max: {
+      width: 350px;
+    };
+    background: {
+      color: var(--twine-1);
+    };
+    box: {
+      shadow: rgb(0 0 0 / 50%) 0px 2px 4px;
+    }
+
+    &__img-box {
+      width:  100%;
+    }
+
+    &__img {
+      width:   100%;
+      height:  auto;
+      display: block;
+    }
+
+    &__content {
+      display: grid;
+      gap:     var(--__content_gap);
+      text: {
+        align: center;
+      };
+    }
+
+    &__title {
+      color: var(--__title_cr);
+      margin: {
+        block: var(--__title_mn-bk);
+      };
+      font: {
+        size: var(--__title_ft-se);
+      }
+    }
+
+    &__type div {
+      display: inline-block;
+      margin: 0 5px;
+    }
+
+    &__school {
+      color: var(--__school_cr);
+      font: {
+        size: var(--__school_ft-se);
+      };
+    }
   }
 }

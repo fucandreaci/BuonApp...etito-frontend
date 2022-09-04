@@ -10,6 +10,8 @@ import nlTexts from './i18n/nl.json';
 import svTexts from './i18n/sv.json';
 import './listRecipes.scss'
 import {RecipeItem} from './components/recipeItem/recipeItem.component';
+import { Container, Row, Col } from 'react-grid-system';
+
 
 interface ListRecipesProps{
 
@@ -32,7 +34,26 @@ export const ListRecipes = (props: ListRecipesProps) => {
 
     return (
         <div className={`${componentClassName}`}>
-            <RecipeItem />
+            <Row>
+                <Col sm={10} md={6} lg={4} className={`${componentClassName}__recipe_col`}>
+                    <RecipeItem />
+                </Col>
+                <Col sm={10} md={6} lg={4} className={`${componentClassName}__recipe_col`}>
+                    <RecipeItem />
+                </Col>
+                <Col sm={10} md={6} lg={4} className={`${componentClassName}__recipe_col`}>
+                    <RecipeItem />
+                </Col>
+                <Col sm={10} md={6} lg={4} className={`${componentClassName}__recipe_col`}>
+                    <RecipeItem />
+                </Col>
+                <Col sm={10} md={6} lg={4} className={`${componentClassName}__recipe_col`}>
+                    <RecipeItem />
+                </Col>
+                <Col sm={10} md={6} lg={4} className={`${componentClassName}__recipe_col`}>
+                    <RecipeItem />
+                </Col>
+            </Row>
         </div>
     )
 };
