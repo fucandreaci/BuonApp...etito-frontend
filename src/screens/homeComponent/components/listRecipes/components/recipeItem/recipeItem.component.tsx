@@ -8,10 +8,8 @@ import esTexts from './i18n/es.json';
 import frTexts from './i18n/fr.json';
 import nlTexts from './i18n/nl.json';
 import svTexts from './i18n/sv.json';
-import {Box, Card, CardBody, CardFooter, Grid, Image, Tag, Text} from 'grommet';
+import {CustomBadge} from 'shared/customBadge/customBadge.component';
 import './recipeItem.scss'
-import {CustomBadge} from '../../../../../../shared/customBadge/customBadge.component';
-
 
 interface RecipeItemProps{
 
