@@ -14,6 +14,7 @@ export const enum AUTHENTICATION_ACTION {
 const signInAction = createAsyncThunk(AUTHENTICATION_ACTION.SIGN_IN, async (params: RequestLoginDTO, thunkAPI) => {
     try {
         const response = await authService.login(params);
+        localStorage.setItem('token', `${response.data.token}`);
         return response.data;
     } catch (err) {
         const e = errorParse.getException(err as AxiosError);

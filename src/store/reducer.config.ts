@@ -3,11 +3,13 @@ import {languageReducer} from './language/language.reducer';
 import {AppAction} from './types';
 import {authenticationReducer} from './authentication/authentication.reducer';
 import {toastReducer} from './toast/toast.reducer';
+import {recipeListReducer} from './recipeList/recipeList.reducer';
 
 const appReducer = combineReducers({
     ...languageReducer,
     ...authenticationReducer,
-    ...toastReducer
+    ...toastReducer,
+    ...recipeListReducer
 });
 
 export const RESET_STORE = 'RESET_STORE';
