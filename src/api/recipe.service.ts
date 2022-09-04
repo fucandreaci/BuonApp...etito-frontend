@@ -7,13 +7,18 @@
  */
 
 import axios, {AxiosResponse} from 'axios';
-import {PageableResponseDTO} from '../models/pageable';
-import {ResponseRecipeDTO} from '../models/recipe';
+import {PageableResponseDTO} from 'models/pageable';
+import {ResponseRecipeDTO} from 'models/recipe';
+import {utils} from 'utils/utils';
 
 const rest = 'recipe';
 
 const getAll = (page?: number): Promise<AxiosResponse<PageableResponseDTO<ResponseRecipeDTO>>> => {
-    return axios.get<PageableResponseDTO<ResponseRecipeDTO>>(rest + '/' + (page ? '?page=' + page : ''));
+    return axios.get<PageableResponseDTO<ResponseRecipeDTO>>(rest + '/' + (page ? '?page=' + page : ''), {
+        headers: {
+            Authorization: utils.getJWTHeader()
+        }
+    });
 }
 
 export const recipeService = {

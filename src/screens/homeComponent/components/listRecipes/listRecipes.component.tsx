@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {loadTranslations} from 'i18n/i18n.service';
 import {useTranslation} from 'react-i18next';
 import enTexts from './i18n/en.json';
@@ -11,6 +11,10 @@ import svTexts from './i18n/sv.json';
 import {RecipeItem} from './components/recipeItem/recipeItem.component';
 import { Row, Col } from 'react-grid-system';
 import './listRecipes.scss'
+import {useSelector} from 'react-redux';
+import {recipeListSelector} from 'store/recipeList/recipeList.selector';
+import {useAppDispatch} from 'store/store.config';
+import {recipeListAction} from 'store/recipeList/recipeList.action';
 
 interface ListRecipesProps{
 
@@ -30,6 +34,15 @@ export const ListRecipes = (props: ListRecipesProps) => {
     };
     loadTranslations('listRecipes', i18nTexts);
     const {t} = useTranslation('listRecipes');
+    const dispatch = useAppDispatch();
+
+    const recipes = useSelector(recipeListSelector.getMyRecipes);
+    useEffect(() => {
+        dispatch(recipeListAction.fetchMyRecipes({}));
+    }, [])
+    useEffect(() => {
+        console.log(recipes);
+    }, [recipes])
 
     return (
         <div className={`${componentClassName}`}>

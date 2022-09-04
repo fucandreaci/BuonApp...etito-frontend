@@ -15,7 +15,6 @@ const root = createRoot(container);
 initAppTranslator();
 
 axios.defaults.baseURL = 'http://localhost:8080/';
-axios.defaults.headers.common['Authorization'] = 'AUTH TOKEN';
 axios.defaults.headers.post['Content-Type'] = 'application/json';
 
 

@@ -1,6 +1,6 @@
 import {createAction, createAsyncThunk} from '@reduxjs/toolkit';
 import {recipeService} from 'api/recipe.service';
-import {errorParse} from '../../utils/errorParse';
+import {errorParse} from 'utils/errorParse';
 import {AxiosError} from 'axios';
 import {toastActions} from '../toast/toast.action';
 import {ToastType} from '../toast/types';
@@ -13,6 +13,7 @@ const fetchMyRecipes = createAsyncThunk(RECIPE_LIST_ACTION.FETCH_MY_RECIPES, asy
         const response = await recipeService.getAll(params.page)
         return response.data;
     } catch (err) {
+        console.log('err', err)
         const e = errorParse.getException(err as AxiosError);
 
         console.log(e)
