@@ -9,10 +9,15 @@ import frTexts from './i18n/fr.json';
 import nlTexts from './i18n/nl.json';
 import svTexts from './i18n/sv.json';
 import {CustomBadge} from 'shared/customBadge/customBadge.component';
+import {Type} from 'models/type';
 import './recipeItem.scss'
 
 interface RecipeItemProps{
-
+    recipeName: string,
+    types: Type[],
+    image: string,
+    preparation: string,
+    onClick?: () => void
 }
 
 const componentClassName = 'recipe-item';
@@ -31,20 +36,20 @@ export const RecipeItem = (props: RecipeItemProps) => {
     const {t} = useTranslation('recipeItem');
 
     return (
-        <div className={`${componentClassName}`}>
+        <div className={`${componentClassName}`} onClick={props.onClick} style={props.onClick ? {cursor: 'pointer'} : {}}>
             <div className={`${componentClassName}__profile_card`}>
                 <div className={`${componentClassName}__profile_card__img-box`}>
-                    <img className={`${componentClassName}__profile_card__img`} src={'https://images.pexels.com/photos/5186/person-woman-coffee-cup.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'} />
+                    <img className={`${componentClassName}__profile_card__img`} src={props.image} />
                 </div>
 
                 <div className={`${componentClassName}__profile_card__content`}>
-                    <h2 className={`${componentClassName}__profile_card__title`}>John Doe</h2>
+                    <h2 className={`${componentClassName}__profile_card__title`}>{props.recipeName}</h2>
                     <div className={`${componentClassName}__profile_card__type`}>
-                        <CustomBadge value={'Test'} />
-                        <CustomBadge value={'Test'} />
-                        <CustomBadge value={'Test'} />
+                        {
+                            props.types.map((type) => <CustomBadge value={type.name}/>)
+                        }
                     </div>
-                    <p className={`${componentClassName}__profile_card__school`}>Lorem ipsum</p>
+                    <p className={`${componentClassName}__profile_card__description`}>{props.preparation}</p>
                 </div>
             </div>
         </div>

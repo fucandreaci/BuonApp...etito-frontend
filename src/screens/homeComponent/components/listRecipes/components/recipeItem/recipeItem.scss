@@ -26,8 +26,8 @@
     --__title_ft-se: var(--ft-se-600);
     --__title_mn-bk: 0.5em 0.2em;
 
-    --__school_cr:    var(--twine-2);
-    --__school_ft-se: var(--ft-se-300);
+    --__description_cr:    var(--twine-2);
+    --__description_ft-se: var(--ft-se-300);
 
     overflow: hidden;
     border-radius: 25px;
@@ -75,11 +75,19 @@
       margin: 0 5px;
     }
 
-    &__school {
-      color: var(--__school_cr);
+    &__description {
+      color: var(--__description_cr);
       font: {
-        size: var(--__school_ft-se);
+        size: var(--__description_ft-se);
       };
+      display: -webkit-box;
+      max-width: 100%;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin: 20px;
+      text-align: justify;
     }
   }
 }

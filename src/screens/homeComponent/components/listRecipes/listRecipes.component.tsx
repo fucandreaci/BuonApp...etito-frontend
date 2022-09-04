@@ -39,32 +39,30 @@ export const ListRecipes = (props: ListRecipesProps) => {
     const recipes = useSelector(recipeListSelector.getMyRecipes);
     useEffect(() => {
         dispatch(recipeListAction.fetchMyRecipes({}));
-    }, [])
-    useEffect(() => {
-        console.log(recipes);
     }, [recipes])
 
     return (
         <div className={`${componentClassName}`}>
             <Row>
-                <Col sm={10} md={6} lg={4} className={`${componentClassName}__recipe_col`}>
-                    <RecipeItem />
-                </Col>
-                <Col sm={10} md={6} lg={4} className={`${componentClassName}__recipe_col`}>
-                    <RecipeItem />
-                </Col>
-                <Col sm={10} md={6} lg={4} className={`${componentClassName}__recipe_col`}>
-                    <RecipeItem />
-                </Col>
-                <Col sm={10} md={6} lg={4} className={`${componentClassName}__recipe_col`}>
-                    <RecipeItem />
-                </Col>
-                <Col sm={10} md={6} lg={4} className={`${componentClassName}__recipe_col`}>
-                    <RecipeItem />
-                </Col>
-                <Col sm={10} md={6} lg={4} className={`${componentClassName}__recipe_col`}>
-                    <RecipeItem />
-                </Col>
+                {
+                    recipes.map((recipe) => {
+                        return (
+                            <Col sm={10} md={6} lg={4} className={`${componentClassName}__recipe_col`} key={recipe.id}>
+                                {/* TODO: change image */}
+                                <RecipeItem
+                                    recipeName={recipe.name}
+                                    preparation={recipe.preparation}
+                                    image={'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?quality=90&resize=768,574'}
+                                    types={recipe.types}
+                                    onClick={() => {
+                                        //TODO: navigate to recipe detail
+                                        console.log('click')
+                                    }}
+                                />
+                            </Col>
+                        )
+                    })
+                }
             </Row>
         </div>
     )
