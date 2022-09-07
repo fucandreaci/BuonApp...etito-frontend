@@ -9,7 +9,7 @@ import frTexts from './i18n/fr.json';
 import nlTexts from './i18n/nl.json';
 import svTexts from './i18n/sv.json';
 import {Button, Header, Heading} from 'grommet';
-import {Logout} from 'grommet-icons';
+import {Home, Logout} from 'grommet-icons';
 import './customNav.scss'
 
 interface CustomNavProps{
@@ -35,7 +35,7 @@ export const CustomNav = (props: CustomNavProps) => {
     return (
         <div className={`${componentClassName}`}>
             <Header background="primary" pad={{horizontal: 'small'}}>
-                <Heading margin="none" style={{fontSize: '25px'}} onClick={props.onClickHeader} className={`${componentClassName}__app_name`}>Buon app...etito</Heading>
+                <Heading margin="none" style={{fontSize: '25px'}} onClick={props.onClickHeader} className={`${componentClassName}__app_name`}><Home />Buon app...etito</Heading>
                 <Button icon={<Logout />} hoverIndicator onClick={props.onClickLogout} />
             </Header>
         </div>
