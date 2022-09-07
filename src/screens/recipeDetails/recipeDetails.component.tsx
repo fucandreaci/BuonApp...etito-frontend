@@ -8,11 +8,11 @@ import esTexts from './i18n/es.json';
 import frTexts from './i18n/fr.json';
 import nlTexts from './i18n/nl.json';
 import svTexts from './i18n/sv.json';
-import './recipeDetails.scss'
 import {useParams} from 'react-router-dom';
 import {Button, Header, Heading} from 'grommet';
 import {Logout} from 'grommet-icons';
-import {CustomBadge} from '../../shared/customBadge/customBadge.component';
+import {CustomBadge} from 'shared/customBadge/customBadge.component';
+import './recipeDetails.scss'
 
 interface RecipeDetailsProps{
 }
@@ -32,6 +32,8 @@ export const RecipeDetails = (props: RecipeDetailsProps) => {
     loadTranslations('recipeDetails', i18nTexts);
     const {t} = useTranslation('recipeDetails');
     const params = useParams<{recipeId: string}>();
+
+    const recipeId = params.recipeId;
 
     return (
         <div className={`${componentClassName}`}>

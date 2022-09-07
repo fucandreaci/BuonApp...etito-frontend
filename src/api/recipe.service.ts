@@ -21,6 +21,15 @@ const getAll = (page?: number): Promise<AxiosResponse<PageableResponseDTO<Respon
     });
 }
 
+const get = (id: number): Promise<AxiosResponse<ResponseRecipeDTO>> => {
+    return axios.get<ResponseRecipeDTO>(rest + '/' + id, {
+        headers: {
+            Authorization: utils.getJWTHeader()
+        }
+    });
+}
+
 export const recipeService = {
-    getAll
+    getAll,
+    get
 }
