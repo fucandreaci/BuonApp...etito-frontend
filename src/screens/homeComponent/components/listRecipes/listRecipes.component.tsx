@@ -15,6 +15,7 @@ import {useSelector} from 'react-redux';
 import {recipeListSelector} from 'store/recipeList/recipeList.selector';
 import {useAppDispatch} from 'store/store.config';
 import {recipeListAction} from 'store/recipeList/recipeList.action';
+import {CreateRecipeButton} from './components/createRecipeButton/createRecipeButton.component';
 
 interface ListRecipesProps{
     onClickItem: (id: number) => void
@@ -60,6 +61,8 @@ export const ListRecipes = (props: ListRecipesProps) => {
                     })
                 }
             </Row>
+
+            <CreateRecipeButton />
         </div>
     )
 };

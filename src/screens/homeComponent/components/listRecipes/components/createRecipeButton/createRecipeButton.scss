@@ -1,0 +1,32 @@
+.create-recipe-button {
+  position: fixed;
+  bottom: 45px;
+  right: 45px;
+
+  &__floatingButton {
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    background: -webkit-linear-gradient(45deg, #8a3b3b, #632b2b, #3e2424);
+    background: -o-linear-gradient(45deg, #8a3b3b, #632b2b, #3e2424);
+    background: linear-gradient(45deg, #8a3b3b, #632b2b, #3e2424);
+
+    //background: linear-gradient(to bottom, #290c0c, #632b2b, #3e2424);
+    color: #fff;
+    line-height: 50px;
+    position: absolute;
+    border-radius: 50% 50%;
+    bottom: 0px;
+    right: 0px;
+    border: 5px solid #8f4a4a;
+    /* opacity: 0.3; */
+    opacity: 1;
+    transition: all 0.4s;
+
+    display: flex;
+    align-items: center; /* Vertical */
+    justify-content: center;
+  }
+
+}
