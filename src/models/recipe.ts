@@ -13,6 +13,7 @@ export interface ResponseRecipeDTO {
     id: number,
     name: string,
     preparation: string,
+    imgUrl: string,
     isPublic: boolean,
     ingredients: IngredientDTO[],
     types: Type[],

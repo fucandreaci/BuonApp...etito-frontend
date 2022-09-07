@@ -11,6 +11,7 @@ const initialState: RecipeDetailsState = {
         preparation: '',
         ingredients: [],
         isPublic: false,
+        imgUrl: '',
     },
 };
 

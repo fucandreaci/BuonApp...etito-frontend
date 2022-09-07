@@ -55,7 +55,7 @@ export const RecipeDetails = (props: RecipeDetailsProps) => {
             </Header>
 
             <div className={`${componentClassName}__image`}>
-                <img src={'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?quality=90&resize=768,574'} />
+                <img src={recipeDetails.imgUrl} />
             </div>
 
             <div className={`${componentClassName}__content`}>
