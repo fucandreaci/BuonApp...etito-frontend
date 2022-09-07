@@ -9,12 +9,13 @@ import frTexts from './i18n/fr.json';
 import nlTexts from './i18n/nl.json';
 import svTexts from './i18n/sv.json';
 import {ListRecipes} from './components/listRecipes/listRecipes.component';
-import {Button, Header, Heading, Menu} from 'grommet';
-import {Logout} from 'grommet-icons';
 import './homeComponent.scss'
+import {CustomNav} from 'shared/customNav/customNav.component';
 
-interface HomeComponentProps{
-    onClickItem: (id: number) => void
+interface HomeComponentProps {
+    onClickItem: (id: number) => void,
+    onClickLogout: () => void,
+    onClickHeader: () => void
 }
 
 const componentClassName = 'home-component';
@@ -34,10 +35,7 @@ export const HomeComponent = (props: HomeComponentProps) => {
 
     return (
         <div className={`${componentClassName}`}>
-            <Header background="primary" pad={{horizontal: 'small'}}>
-                <Heading margin="none" style={{fontSize: '25px'}}>Buon app...etito</Heading>
-                <Button icon={<Logout />} hoverIndicator />
-            </Header>
+            <CustomNav onClickHeader={props.onClickHeader} onClickLogout={props.onClickLogout}/>
             <ListRecipes onClickItem={props.onClickItem}/>
         </div>
     )

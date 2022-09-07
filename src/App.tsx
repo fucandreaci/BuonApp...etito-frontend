@@ -35,6 +35,14 @@ function App() {
         customHistory.push(`/recipe/${id}`);
     }
 
+    const onClickHeader = () => {
+        customHistory.push('/home');
+    }
+
+    const onClickLogout = () => {
+        customHistory.push('/logout');
+    }
+
     const theme = {
         global: {
             colors: {
@@ -52,10 +60,10 @@ function App() {
                         <Login/>
                     </Route>
                     <Route path="/home" exact={true}>
-                        <HomeComponent onClickItem={onClickItem}/>
+                        <HomeComponent onClickItem={onClickItem} onClickHeader={onClickHeader} onClickLogout={onClickLogout}/>
                     </Route>
                     <Route path="/recipe/:recipeId" exact={true}>
-                        <RecipeDetails/>
+                        <RecipeDetails onClickHeader={onClickHeader} onClickLogout={onClickLogout}/>
                     </Route>
                 </Switch>
             </Router>
