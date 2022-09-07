@@ -17,7 +17,7 @@ import {useAppDispatch} from 'store/store.config';
 import {recipeListAction} from 'store/recipeList/recipeList.action';
 
 interface ListRecipesProps{
-
+    onClickItem: (id: number) => void
 }
 
 const componentClassName = 'list-recipes';
@@ -53,10 +53,7 @@ export const ListRecipes = (props: ListRecipesProps) => {
                                     preparation={recipe.preparation}
                                     image={recipe.imgUrl}
                                     types={recipe.types}
-                                    onClick={() => {
-                                        //TODO: navigate to recipe detail
-                                        console.log('click')
-                                    }}
+                                    onClick={() => props.onClickItem(recipe.id)}
                                 />
                             </Col>
                         )

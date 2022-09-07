@@ -8,15 +8,14 @@ import nlTexts from 'i18n/common-translations/nl.json';
 import svTexts from 'i18n/common-translations/sv.json';
 import {Route, Router, Switch} from 'react-router-dom';
 import {loadTranslations} from 'i18n/i18n.service';
-import {createBrowserHistory} from "history";
-import './App.css';
 import {useTranslation} from 'react-i18next';
 import {Login} from 'screens/login/login.component';
 import { Grommet } from 'grommet';
 import {Toastr} from './shared/toastr/toastr.component';
-import {Home} from 'grommet-icons';
 import {HomeComponent} from './screens/homeComponent/homeComponent.component';
 import {RecipeDetails} from './screens/recipeDetails/recipeDetails.component';
+import customHistory from './navigation/customHistory.config';
+import './App.css';
 
 function App() {
     const i18nTexts = {
@@ -31,7 +30,10 @@ function App() {
     loadTranslations('commons', i18nTexts);
 
     const {t} = useTranslation('commons');
-    const browserHistory = createBrowserHistory();
+
+    const onClickItem = (id: number) => {
+        customHistory.push(`/recipe/${id}`);
+    }
 
     const theme = {
         global: {
@@ -44,13 +46,13 @@ function App() {
     return (
         <Grommet theme={theme}>
             <Toastr />
-            <Router history={browserHistory}>
+            <Router history={customHistory}>
                 <Switch>
                     <Route path="/login" exact={true}>
                         <Login/>
                     </Route>
                     <Route path="/home" exact={true}>
-                        <HomeComponent/>
+                        <HomeComponent onClickItem={onClickItem}/>
                     </Route>
                     <Route path="/recipe/:recipeId" exact={true}>
                         <RecipeDetails/>

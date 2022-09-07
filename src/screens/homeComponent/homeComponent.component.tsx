@@ -14,7 +14,7 @@ import {Logout} from 'grommet-icons';
 import './homeComponent.scss'
 
 interface HomeComponentProps{
-
+    onClickItem: (id: number) => void
 }
 
 const componentClassName = 'home-component';
@@ -38,7 +38,7 @@ export const HomeComponent = (props: HomeComponentProps) => {
                 <Heading margin="none" style={{fontSize: '25px'}}>Buon app...etito</Heading>
                 <Button icon={<Logout />} hoverIndicator />
             </Header>
-            <ListRecipes />
+            <ListRecipes onClickItem={props.onClickItem}/>
         </div>
     )
 };
