@@ -48,11 +48,10 @@ export const ListRecipes = (props: ListRecipesProps) => {
                     recipes.map((recipe) => {
                         return (
                             <Col sm={10} md={6} lg={4} className={`${componentClassName}__recipe_col`} key={recipe.id}>
-                                {/* TODO: change image */}
                                 <RecipeItem
                                     recipeName={recipe.name}
                                     preparation={recipe.preparation}
-                                    image={'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?quality=90&resize=768,574'}
+                                    image={recipe.imgUrl}
                                     types={recipe.types}
                                     onClick={() => {
                                         //TODO: navigate to recipe detail

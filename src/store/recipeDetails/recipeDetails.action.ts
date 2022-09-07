@@ -17,6 +17,7 @@ const fetchRecipe = createAsyncThunk(RECIPE_DETAILS_ACTION.FETCH_RECIPE_DETAILS,
         console.log('err', err)
         const e = errorParse.getException(err as AxiosError);
 
+        // FIXME: If user can't access to this recipe, we should redirect to 404 page
         console.log(e)
         thunkAPI.dispatch(toastActions.showToast({
             message: e.domain + ':' + e.message,
