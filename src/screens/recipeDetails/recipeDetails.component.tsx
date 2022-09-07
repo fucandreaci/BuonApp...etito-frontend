@@ -17,8 +17,11 @@ import {recipeDetailsAction} from 'store/recipeDetails/recipeDetails.action';
 import {useSelector} from 'react-redux';
 import {recipeDetailsSelector} from 'store/recipeDetails/recipeDetails.selector';
 import './recipeDetails.scss'
+import {CustomNav} from '../../shared/customNav/customNav.component';
 
 interface RecipeDetailsProps{
+    onClickLogout: () => void,
+    onClickHeader: () => void
 }
 
 const componentClassName = 'recipe-details';
@@ -49,10 +52,7 @@ export const RecipeDetails = (props: RecipeDetailsProps) => {
 
     return (
         <div className={`${componentClassName}`}>
-            <Header background="primary" pad={{horizontal: 'small'}}>
-                <Heading margin="none" style={{fontSize: '25px'}}>Buon app...etito</Heading>
-                <Button icon={<Logout />} hoverIndicator />
-            </Header>
+            <CustomNav onClickHeader={props.onClickHeader} onClickLogout={props.onClickLogout}/>
 
             <div className={`${componentClassName}__image`}>
                 <img src={recipeDetails.imgUrl} />
