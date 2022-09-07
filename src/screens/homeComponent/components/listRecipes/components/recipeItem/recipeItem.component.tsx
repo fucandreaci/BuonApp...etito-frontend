@@ -46,7 +46,7 @@ export const RecipeItem = (props: RecipeItemProps) => {
                     <h2 className={`${componentClassName}__profile_card__title`}>{props.recipeName}</h2>
                     <div className={`${componentClassName}__profile_card__type`}>
                         {
-                            props.types.map((type) => <CustomBadge value={type.name}/>)
+                            props.types.map((type) => <CustomBadge value={type.name} key={type.id}/>)
                         }
                     </div>
                     <p className={`${componentClassName}__profile_card__description`}>{props.preparation}</p>
