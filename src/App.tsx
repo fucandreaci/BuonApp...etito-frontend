@@ -16,6 +16,7 @@ import { Grommet } from 'grommet';
 import {Toastr} from './shared/toastr/toastr.component';
 import {Home} from 'grommet-icons';
 import {HomeComponent} from './screens/homeComponent/homeComponent.component';
+import {RecipeDetails} from './screens/recipeDetails/recipeDetails.component';
 
 function App() {
     const i18nTexts = {
@@ -50,6 +51,9 @@ function App() {
                     </Route>
                     <Route path="/home" exact={true}>
                         <HomeComponent/>
+                    </Route>
+                    <Route path="/recipe/:recipeId" exact={true}>
+                        <RecipeDetails/>
                     </Route>
                 </Switch>
             </Router>

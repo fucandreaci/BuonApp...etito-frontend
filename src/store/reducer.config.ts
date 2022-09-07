@@ -4,12 +4,14 @@ import {AppAction} from './types';
 import {authenticationReducer} from './authentication/authentication.reducer';
 import {toastReducer} from './toast/toast.reducer';
 import {recipeListReducer} from './recipeList/recipeList.reducer';
+import {recipeDetailsReducer} from './recipeDetails/recipeDetails.reducer';
 
 const appReducer = combineReducers({
     ...languageReducer,
     ...authenticationReducer,
     ...toastReducer,
-    ...recipeListReducer
+    ...recipeListReducer,
+    ...recipeDetailsReducer
 });
 
 export const RESET_STORE = 'RESET_STORE';
