@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {loadTranslations} from 'i18n/i18n.service';
 import {useTranslation} from 'react-i18next';
 import enTexts from './i18n/en.json';
@@ -10,12 +10,13 @@ import nlTexts from './i18n/nl.json';
 import svTexts from './i18n/sv.json';
 import {RecipeItem} from './components/recipeItem/recipeItem.component';
 import { Row, Col } from 'react-grid-system';
-import './listRecipes.scss'
 import {useSelector} from 'react-redux';
 import {recipeListSelector} from 'store/recipeList/recipeList.selector';
 import {useAppDispatch} from 'store/store.config';
 import {recipeListAction} from 'store/recipeList/recipeList.action';
 import {CreateRecipeButton} from './components/createRecipeButton/createRecipeButton.component';
+import {CreateRecipeModal} from './components/createRecipeModal/createRecipeModal.component';
+import './listRecipes.scss'
 
 interface ListRecipesProps{
     onClickItem: (id: number) => void
@@ -38,6 +39,9 @@ export const ListRecipes = (props: ListRecipesProps) => {
     const dispatch = useAppDispatch();
 
     const recipes = useSelector(recipeListSelector.getMyRecipes);
+
+    const [showCreationPopup, setShowCreationPopup] = useState<boolean>(false);
+
     useEffect(() => {
         dispatch(recipeListAction.fetchMyRecipes({}));
     }, [recipes])
@@ -62,7 +66,19 @@ export const ListRecipes = (props: ListRecipesProps) => {
                 }
             </Row>
 
-            <CreateRecipeButton />
+            <CreateRecipeButton
+                showPopup={showCreationPopup}
+                setShowPopup={setShowCreationPopup}
+            />
+
+            {
+                showCreationPopup && (
+                    <CreateRecipeModal
+                        showPopup={showCreationPopup}
+                        setShowPopup={setShowCreationPopup}
+                    />
+                )
+            }
         </div>
     )
 };

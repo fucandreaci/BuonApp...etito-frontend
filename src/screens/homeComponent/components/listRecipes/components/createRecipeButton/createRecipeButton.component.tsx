@@ -10,10 +10,10 @@ import nlTexts from './i18n/nl.json';
 import svTexts from './i18n/sv.json';
 import {Add} from 'grommet-icons';
 import './createRecipeButton.scss'
-import {Layer} from 'grommet';
 
 interface CreateRecipeButtonProps {
-
+    showPopup: boolean,
+    setShowPopup: (showPopup: boolean) => void
 }
 
 const componentClassName = 'create-recipe-button';
@@ -31,23 +31,13 @@ export const CreateRecipeButton = (props: CreateRecipeButtonProps) => {
     loadTranslations('createRecipeButton', i18nTexts);
     const {t} = useTranslation('createRecipeButton');
 
-    const [showPopup, setShowPopup] = useState<boolean>(false);
+    const {showPopup, setShowPopup} = props;
 
     return (
         <div className={`${componentClassName}`}>
             <a className={`${componentClassName}__floatingButton`} onClick={() => setShowPopup(true)}>
                 <Add color={'white'}/>
             </a>
-
-            {
-                showPopup && (
-                    <Layer
-                        onEsc={() => setShowPopup(false)}
-                        onClickOutside={() => setShowPopup(false)}
-                    >
-                    </Layer>
-                )
-            }
         </div>
     )
 };
